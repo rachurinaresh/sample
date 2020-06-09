@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Registration Link</title>
+<style type="text/css">
+body{
+	background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRuOpCgZn1ulp5e89YOcUlRgE7PFGoBiv1j6f4FbuXfxpd7UFGB&usqp=CAU");
+	 background-repeat: no-repeat;
+	background-size:100% 100%;
+		
+}
+#m{
+	 color: blue;
+	font-size:25px
+
+}
+#First,#Second,#Gmail,#DOB,#subject,#co,#ph,#txt{
+	border-radius:25px;
+}
+</style>
+<script type="text/javascript">
+function sample(){
+	var strText=document.getElementById("First").value;
+	var strText1=document.getElementById("Second").value;
+	var strText2=document.getElementById("Gmail").value;
+	var strText3=document.getElementById("DOB").value;
+	var ele=document.getElementsByName('Gender');
+	var e=document.getElementById('subject');
+	document.getElementById("p1").innerHTML=strText+" "+strText1;
+	document.getElementById("p3").innerHTML=strText2;
+	document.getElementById("p6").innerHTML=strText3;
+	var s1=e.options[e.selectedIndex].value;
+	document.getElementById("p5").innerHTML=s1;
+	for(i=0;i<ele.length;i++){
+		if(ele[i].checked){
+			document.getElementById("p2").innerHTML="Gender:"+ele[i].value;
+		}
+	}
+
+}
+</script>
+</head> 
+<body align="center">
+	<h1 align="center">Registration Form</h1>
+	<form>
+	<marquee id="m">Please enter the details for course registration.</marquee>
+	<b>&nbsp&nbspFirst Name</b> :   <input type="text" name="FirstName" size="15" id="First" required>
+	<br>
+	<br>
+	<b>&nbsp&nbspLast  Name</b> :   <input type="text" name="LastName" size="15" id="Second" required>
+	<br>
+	<br>
+	<b>&nbsp&nbspStudent Email</b>     :    <input type="text" id="Gmail" size="15" required >
+	<br>
+	<br>
+
+	<b>&nbsp&nbspStudent DOB</b>     :    <input type="date" id="DOB" size="15" required>
+	<br>
+	<br>
+	<b>&nbsp&nbspGender</b>    :    <input type="radio" name="Gender" value="Male">Male 
+		      			<input type="radio" name="Gender" value="Female" > Female 
+                     	 		<input type="radio" name="Gender" value="Others">Others
+	<br>
+	<br>
+	<b>&nbsp&nbspCourses</b> :     <select required id='subject'>
+			<option value="Course" >Course</option>
+			<option value="BCA" >BCA</option>
+			<option value="BBA"  >BBA</option>
+			<option value="B.Tech" >B.Tech</option>
+			<option value="MBA" >MBA</option>
+			<option value="MCA" >MCA</option>
+			<option value="M.Tech" >M.Tech</option>
+		       </select>
+	<br>
+	<br>
+	<b>&nbsp&nbspPhone Number</b> : 
+	<input type="text" id="co" name="country code"  value="+91" size="2"/>   
+	<input type="text" id="ph" name="phone" size="10" required/> <br> <br>  
+
+
+	<b>&nbsp&nbspAddress</b> : 
+	<br>
+	&nbsp&nbsp
+	<textarea cols="80" rows="5" id="txt" value="address"required>  
+	</textarea> 
+	<br>
+	<br>
+	&nbsp&nbsp
+	<input type="button" id="btnsubmit" value="Submit" onclick="sample()">
+	&nbsp
+	<input type="reset" name="reset" value="Reset">
+	</form>
+	<div>
+		<p id="p1"></p>
+		<p id="p2"></p>
+		<p id="p3"></p>
+		<p id="p4"></p>
+		<p id="p5"></p>
+		<p id="p6"></p>
+		<p id="p6"></p>
+	</div>
+</body>
+</html>
